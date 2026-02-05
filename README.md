@@ -43,8 +43,8 @@ Execute the script with:
 
 ```shell
 cd OpenVPN-Setup
-chmod +x openvpnsetup.sh
-sudo ./openvpnsetup.sh
+chmod +x OpenVPNsetup.sh
+sudo ./OpenVPNsetup.sh
 ```
 
 The script will first update your APT repositories, upgrade packages, and install OpenVPN,
@@ -68,8 +68,8 @@ first client profile, execute the script with:
 
 ```shell
 cd OpenVPN-Setup
-chmod +x MakeOVPN.sh
-./MakeOVPN.sh
+chmod +x OpenVPN.sh
+./OpenVPN.sh
 ```
 
 You will be prompted to enter a name for your client. Pick anything you like and hit 'enter'. 
@@ -83,53 +83,5 @@ another pass phrase for the encrypted key - if you're normal, just use the same 
 the script will assemble the client .ovpn file and place it in your home directory to make it easy
 to access using SFTP or SCP, which you'll need to do to move the profile to your client machine.
 
-To generate additional client .ovpn profiles for other devices you'd like to connect to the VPN,
-simply cd into OpenVPN-Setup and execute the MakeOVPN script, repeating the above steps, for each
-client:
 
-```shell
-cd OpenVPN-Setup
-./MakeOVPN.sh
-```
 
-Importing .ovpn Profiles on Client Machines
---------------------------------------------
-
-To move a client .ovpn profile to Windows, use a program like WinSCP or Cyberduck. Note that
-you may need administrator permission to move files to some folders on your Windows machine,
-so if you have trouble transferring the profile to a particular folder with your chosen file
-transfer program, try moving it to your desktop. To move a profile to Android, you can either
-retrieve it on PC and then move it to your device via USB, or you can use an app like Turbo
-FTP & SFTP client to retrieve it directly from your Android device.
-
-To import the profile to OpenVPN on Windows, download the OpenVPN GUI from the community downloads
-section of openvpn.net, install it, and place the profile in the 'config' folder of your OpenVPN
-directory, i.e., in 'C:\Program Files\OpenVPN\config'. To import the profile on Android, install
-the OpenVPN Connect app, select 'Import' from the drop-down menu in the upper right corner of the
-main screen, choose the directory on your device where you stored the .ovpn file, and select the
-file.
-
-After importing, connect to the VPN server on Windows by running the OpenVPN GUI with
-administrator permissions, right-clicking on the icon in the system tray, and clicking 'Connect',
-or on Android by selecting the profile under 'OpenVPN Profile' and pressing 'Connect'. You'll be
-asked to enter the pass phrase you chose. Do so, and you're in! Enjoy your ~$50 USD private VPN.
-
-Thanks
-------
-
-This script automates and streamlines the process outlined by a great many people from many corners
-of the internet for setting up OpenVPN on a Raspberry Pi. In particular, it is based on the steps
-outlined by Lauren Orsini at readwrite.com in her excellent tutorial, and many thanks go to her for
-bringing together the steps of the setup process in a way that even I could understand. Thanks also
-go to the Raspberry Pi Foundation for the awesome Raspberry Pi, the wonderful Raspberry Pi community,
-and to OpenVPN and their fantastic open-source community.
-
-Sources
--------
-1: http://readwrite.com/2014/04/10/raspberry-pi-vpn-tutorial-server-secure-web-browsing
-
-2: http://readwrite.com/2014/04/11/building-a-raspberry-pi-vpn-part-two-creating-an-encrypted-client-side#awesm=~oB89WBfWrt21bV
-
-3: https://www.modmypi.com/blog/tutorial-how-to-give-your-raspberry-pi-a-static-ip-address
-
-4: http://readwrite.com/2014/04/09/raspberry-pi-projects-ssh-remote-desktop-static-ip-tutorial?utm_content=readwrite3-orionautotweet&awesm=readwr.it_b1UN&utm_campaign=&utm_medium=readwr.it-twitter&utm_source=t.co#awesm=~oAXilI0BMOHsS3
