@@ -32,12 +32,6 @@ sudo apt-get upgrade
 sudo apt-get install git
 ```
 
-Then download the latest setup script with:
-
-```shell
-cd
-git clone --depth=1 git://github.com/StarshipEngineer/OpenVPN-Setup.git
-```
 
 Execute the script with:
 
